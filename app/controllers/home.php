@@ -11,7 +11,7 @@
 			parent::__construct();
 		}
 
-		public function index($name=''){ 
+		public function index($name=''){
 	
 			$user = $this->model('User');
 			$user->name = $name;
@@ -29,10 +29,12 @@
 
 		public function about(){
 
-			$this->view('about');
+			$this->view('about',['nama'=>APP_NAME]);
 		}
 
 		public function contact(){
+
+			Redirect::to('home/about');
 
 			$this->view('contact');
 		}

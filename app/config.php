@@ -3,6 +3,9 @@
 	// Config by Yuana, Andhika
 	// 2015 Agustus 12
 
+	//set date/time default
+	date_default_timezone_set('Asia/Jakarta');
+
 	//ROOT DIR
 	define('ROOT_DIR', 'http://localhost/yuana/mymvc/');
 
