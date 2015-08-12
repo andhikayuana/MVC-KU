@@ -4,6 +4,7 @@
 	*  class App by Yuana, Andhika
 	*  2015 Agustus 12
 	*/
+
 	class App{
 
 		protected $controller = 'home';

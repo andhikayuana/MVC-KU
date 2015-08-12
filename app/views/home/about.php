@@ -1,3 +1,3 @@
 <section class="jumbotron">
-	<h1>ini aboutnya ya</h1>
+	<h1>ini aboutnya ya <?=$data['nama'];?></h1>
 </section>
