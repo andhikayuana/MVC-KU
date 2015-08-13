@@ -12,7 +12,13 @@
 		}
 
 		public function index($name=''){
-	
+
+			$get = Request::get('id');
+
+			if (isset($get)) {
+				echo $get;
+			}
+
 			$user = $this->model('User');
 			$user->name = $name;
 

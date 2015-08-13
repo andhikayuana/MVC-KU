@@ -37,6 +37,8 @@
 						<li><a href="<?=$this->createUrl('home/index');?>">Home</a></li>
 						<li><a href="<?=$this->createUrl('home/about');?>">About</a></li>
 						<li><a href="<?=$this->createUrl('home/contact');?>">Contact</a></li>
+						<li><a href="<?=$this->createUrl('login/index');?>">Login</a></li>
+						<li><a href="<?=$this->createUrl('home/index',['id'=>123456,'key'=>456]);?>">Index ID</a></li>
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -51,8 +53,8 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li class="active"><a href="yuana">Yuana <span class="sr-only">(current)</span></a></li>
-						<li><a href="andhika">Andhika</a></li>
+						<li class="active"><a href="<?=$this->createUrl('home/index/Yuana');?>">Yuana <span class="sr-only">(current)</span></a></li>
+						<li><a href="<?=$this->createUrl('home/index/Andhika');?>">Andhika</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div><!--/.container-fluid -->
