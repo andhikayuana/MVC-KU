@@ -18,4 +18,6 @@
 
 	require_once 'core/Redirect.php';
 
+	require_once 'core/Request.php';
+
 	$app = new App;

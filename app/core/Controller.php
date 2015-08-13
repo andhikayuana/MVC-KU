@@ -5,8 +5,6 @@
 	*/
 	class Controller{
 
-		protected $viewFolder;
-
 		function __construct(){
 
 			Session::init();
@@ -28,13 +26,13 @@
 		*  @param $view
 		*  @param $data
 		*/
-		public function view($view, $data = []){
+		public function view($view, $data = null){
 
-			$this->viewFolder = strtolower($this->getControllerName());
+			$viewFolder = strtolower($this->getControllerName());
 
 			require_once TPL_HEAD;
 
-			require_once '../app/views/'.$this->viewFolder.'/'.$view.'.php';
+			require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
 
 			require_once TPL_FOOT;
 		}
@@ -43,15 +41,45 @@
 		*  function getControllerName
 		*/
 		public function getControllerName(){
+		
 			return get_called_class();
 		}
 
 		/**
 		*  function createUrl
 		*  @param controller/action
+		*  @param $data
 		*/
-		public function createUrl($controller_action=''){
-			
-			return PUBLIC_DIR . $controller_action;
+		public function createUrl($controller_action='', $data = null){
+
+			if ($data) {
+
+				$url = '?';
+				
+				$i = 1;
+
+				foreach ($data as $key => $value) {
+
+					if ($i!=count($data)) {
+
+						$url .= $key . '=' . $value . "&";
+
+					} else {
+
+						$url .= $key . '=' . $value;
+
+					}
+
+					$i++;
+				}
+
+				$newurl = PUBLIC_DIR . $controller_action . $url;
+			}
+			else{
+
+				$newurl = PUBLIC_DIR . $controller_action;
+			}
+
+			return $newurl;
 		}
 	}
