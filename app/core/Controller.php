@@ -28,6 +28,16 @@
 		*/
 		public function view($view, $data = null){
 
+			if (isset($data)) {
+
+				foreach ($data as $key => $value) {
+				
+					${$key} = $value;
+				
+				}
+			
+			}
+
 			$viewFolder = strtolower($this->getControllerName());
 
 			require_once TPL_HEAD;

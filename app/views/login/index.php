@@ -19,6 +19,6 @@
 </form>
 
 <div>
-  <?=$data['email'];?>
-  <?=$data['password'];?>
+  <?=@$email;?>
+  <?=@$password;?>
 </div>
