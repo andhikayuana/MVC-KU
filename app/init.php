@@ -20,4 +20,6 @@
 
 	require_once 'core/Request.php';
 
+	require_once 'core/Form.php';
+
 	$app = new App;

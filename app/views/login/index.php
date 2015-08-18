@@ -22,3 +22,17 @@
   <?=@$email;?>
   <?=@$password;?>
 </div>
+
+<?php
+  echo Form::open($this->createUrl('login/index'),'POST');
+  echo Form::label('nama','Nama',array('class'=>'control-label'));
+  echo Form::text('nama', null, array('class'=>'form-control', 'placeholder'=>'Nama'));
+  echo Form::label('nama','Password',array('class'=>'control-label'));
+  echo Form::password('password',array('class'=>'form-control', 'placeholder'=>'Password'));
+  echo Form::label('alamat','Alamat',array('class'=>'control-label'));
+  echo Form::textarea('alamat',null, array('class'=>'form-control'));
+  echo Form::label('gender','Gender',array('class'=>'control-label'));
+  echo Form::select('gender', array('L'=>'Laki-laki','P'=>'Perempuan'), array('class'=>'form-control'));
+  echo Form::submit('simpan','Simpan',array('class'=>'btn btn-success'));
+  echo Form::close();
+?>
