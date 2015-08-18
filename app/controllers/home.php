@@ -22,7 +22,7 @@
 			$user = $this->model('User');
 			$user->name = $name;
 
-			$this->view('index',['name'=>$user->name]);
+			$this->render('index',['name'=>$user->name]);
 		}
 
 		public function create($username='', $email=''){
@@ -35,7 +35,7 @@
 
 		public function about(){
 
-			$this->view('about',['nama'=>APP_NAME]);
+			$this->render('about',['nama'=>APP_NAME]);
 		}
 
 		public function contact(){
@@ -72,6 +72,19 @@
 
 			Session::del('username');
 			echo 'berhasil logout';
+		}
+
+		public function lihat(){
+
+			$users = User::all();
+
+			$this->render('lihat',['users'=>$users]);
+
+		}
+
+		public function detail($id){
+
+			echo $id;
 		}
 
 	}

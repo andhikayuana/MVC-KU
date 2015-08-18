@@ -26,7 +26,7 @@
 		*  @param $view
 		*  @param $data
 		*/
-		public function view($view, $data = null){
+		public function render($view, $data = null){
 
 			if (isset($data)) {
 
