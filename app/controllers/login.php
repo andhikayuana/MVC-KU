@@ -12,7 +12,7 @@
 
 		public function index(){
 
-			$this->view('index');
+			$this->render('index');
 		}
 
 		public function auth(){
@@ -21,7 +21,7 @@
 
 			$password = Request::post('password');
 
-			$this->view('index',[
+			$this->render('index',[
 				'email'=>$email,
 				'password'=>$password
 				]);

@@ -26,7 +26,17 @@
 		*  @param $view
 		*  @param $data
 		*/
-		public function view($view, $data = null){
+		public function render($view, $data = null){
+
+			if (isset($data)) {
+
+				foreach ($data as $key => $value) {
+				
+					${$key} = $value;
+				
+				}
+			
+			}
 
 			$viewFolder = strtolower($this->getControllerName());
 
