@@ -24,7 +24,7 @@
 </div>
 
 <?php
-  echo Form::open($this->createUrl('login/index'),'POST');
+  echo Form::open('registrasi', array('method'=>'POST', 'action'=>$this->createUrl('login/auth')));
   echo Form::label('nama','Nama',array('class'=>'control-label'));
   echo Form::text('nama', null, array('class'=>'form-control', 'placeholder'=>'Nama'));
   echo Form::label('nama','Password',array('class'=>'control-label'));
