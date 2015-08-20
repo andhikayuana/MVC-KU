@@ -7,10 +7,13 @@
 
 		/**
 		*  function open
-		*  <form action="action_page.php" method="GET" target="_blank" accept-charset="UTF-8">
+		*  <form>
+		*  @param $name
+		*  @param $attributes
 		*/
-		public function open($action='', $method='GET', $target='_self'){
-			return '<form action="'.$action.'" method="'.$method.'" target="'.$target.'" accept-charset="UTF-8">';
+		public function open($name, $attributes = array()){
+			$attributes = self::getAttributes($attributes);
+			return '<form name="'.$name.'" id="'.$name.'" '.$attributes.' accept-charset="UTF-8">';
 		}
 
 		/**
@@ -30,7 +33,7 @@
 		*/
 		public function label($name, $text, $attributes = array()){
 			$attributes = self::getAttributes($attributes);
-			return '<label for="'.$name.'">'.$text.'</label>';
+			return '<label for="'.$name.'" '.$attributes.'>'.$text.'</label>';
 		}	
 
 		/**
