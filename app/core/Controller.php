@@ -22,7 +22,7 @@
 		}
 
 		/**
-		*  function view
+		*  function render
 		*  @param $view
 		*  @param $data
 		*/
@@ -45,6 +45,28 @@
 			require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
 
 			require_once TPL_FOOT;
+		}
+
+		/**
+		*  function renderPartial
+		*  @param $view
+		*  @param $data
+		*/
+		public function renderPartial($view, $data = null){
+
+			if (isset($data)) {
+
+				foreach ($data as $key => $value) {
+				
+					${$key} = $value;
+				
+				}
+			
+			}
+
+			$viewFolder = strtolower($this->getControllerName());
+
+			require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
 		}
 
 		/**
