@@ -42,7 +42,7 @@
 
 			Redirect::to('home/about');
 
-			$this->view('contact');
+			$this->render('contact');
 		}
 
 		public function register(){
@@ -84,7 +84,9 @@
 
 		public function detail($id){
 
-			echo $id;
+			$user = User::find($id);
+
+			$this->render('detail',['user'=>$user]);
 		}
 
 	}
