@@ -1,7 +1,7 @@
 Options -Multiviews
 RewriteEngine On
 
-RewriteBase /yuana/mymvc/public
+RewriteBase /yuana/mvcku/public
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

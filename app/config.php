@@ -7,13 +7,13 @@
 	date_default_timezone_set('Asia/Jakarta');
 
 	//ROOT DIR
-	define('ROOT_DIR', 'http://localhost/yuana/mymvc/');
+	define('ROOT_DIR', 'http://localhost/yuana/mvcku/');
 
 	//APP_DIR
 	define('APP_DIR',__DIR__);
 
 	//PUBLIC_DIR
-	define('PUBLIC_DIR', 'http://localhost/yuana/mymvc/public/');
+	define('PUBLIC_DIR', 'http://localhost/yuana/mvcku/public/');
 
 	//APP_NAME
 	define('APP_NAME', 'LATIHAN');
