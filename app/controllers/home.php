@@ -86,6 +86,11 @@
 
 			$user = User::find($id);
 
+			if (empty($user)) {
+				
+				Redirect::to('home/index');
+			}
+
 			$this->render('detail',['user'=>$user]);
 		}
 
