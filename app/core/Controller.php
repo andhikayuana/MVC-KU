@@ -40,11 +40,18 @@
 
 			$viewFolder = strtolower($this->getControllerName());
 
-			require_once TPL_HEAD;
+			if (file_exists('../app/views/'.$viewFolder.'/'.$view.'.php')) {
 
-			require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
+				require_once TPL_HEAD;
 
-			require_once TPL_FOOT;
+				require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
+
+				require_once TPL_FOOT;
+			}
+			else{
+				
+				echo 'file view '.$view.' not found';
+			}
 		}
 
 		/**
@@ -66,7 +73,16 @@
 
 			$viewFolder = strtolower($this->getControllerName());
 
-			require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
+			if (file_exists('../app/views/'.$viewFolder.'/'.$view.'.php')) {
+
+				require_once '../app/views/'.$viewFolder.'/'.$view.'.php';
+			}
+			else{
+
+				echo 'file view '.$view.' not found';
+			}
+
+			
 		}
 
 		/**
