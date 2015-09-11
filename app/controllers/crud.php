@@ -36,24 +36,37 @@
 			Redirect::to('crud/index');
 		}
 
-		public function show(){
+		public function show($id){
 
-			$this->renderPartial('show');
+			$user = User::find($id);
+
+			$this->renderPartial('show',['user'=>$user]);
 		}
 
-		public function edit(){
+		public function edit($id){
 
-			$this->renderPartial('edit');
+			$user = User::find($id);
+
+			$this->renderPartial('edit',['id'=>$id,'user'=>$user]);
 		}
 
-		public function update(){
+		public function update($id){
 
+			$username = Request::post('username');
+			$email = Request::post('email');
+
+			User::find($id)->update([
+					'username'=>$username,
+					'email'=>$email
+				]);
+
+			Redirect::to('crud/index');
 		}
 
 		public function delete($id){
 
 			User::find($id)->delete();
-			
+
 			Redirect::to('crud/index');
 
 		}
