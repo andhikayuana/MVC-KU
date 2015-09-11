@@ -31,7 +31,7 @@
 		*  @param $text
 		*  @param $attributes
 		*/
-		public function label($name, $text, $attributes = array()){
+		public function label($name, $text='', $attributes = array()){
 			$attributes = self::getAttributes($attributes);
 			return '<label for="'.$name.'" '.$attributes.'>'.$text.'</label>';
 		}	
@@ -94,7 +94,7 @@
 		*  @param $text
 		*  @param $attributes
 		*/
-		public function submit($name, $text, $attributes = array()){
+		public function submit($name, $text='', $attributes = array()){
 			$attributes = self::getAttributes($attributes);
 			return '<button name="'.$name.'" type="submit" '.$attributes.'>'.$text.'</button>';
 		}
